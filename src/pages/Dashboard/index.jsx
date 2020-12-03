@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 
+import { key } from '../../config/auth.json';
+
 import api from '../../services/api';
 
 import Header from '../../components/Header';
@@ -37,13 +39,13 @@ const Dashboard = () => {
     }
 
     try {
-      const response = await api.get(`/search/movie?api_key=${process.env.API_KEY}&language=pt-BR&page=1&include_adult=true&query=${newMovie}`);
+      const response = await api.get(`/search/movie?api_key=${key}&language=pt-BR&page=1&include_adult=true&query=${newMovie}`);
 
       const movie = response.data;
 
       console.log(movie);
 
-      setMovies([...movies, movie]);
+      setMovies(movie.results);
       setNewMovie('');
       setInputError('');
     } catch (err) {
