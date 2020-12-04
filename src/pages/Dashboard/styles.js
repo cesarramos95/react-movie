@@ -52,27 +52,34 @@ export const Error = styled.span`
   margin-top: 8px;
 `;
 
-export const Movie = styled.li`
+export const Movie = styled.div`
   display: flex;
   align-items: center;
+  vertical-align: middle;
+  overflow: auto;
 
-  & + ul {
-    margin-top: 16px;
+
+  & + div {
+    margin-top: 30px;
   }
 
-  ul {
+  div {
     flex: 1;
     background: #3e3b47;
-    display: flex;
     align-items: center;
-    padding: 16px 24px;
     border-radius: 10px;
     margin-left: 24px;
+    margin-right: 24px;
 
-    li {
+    & + span {
+      margin-top: 16px;
+    }
+
+    span {
       margin-left: 24px;
       color: #fff;
-      font-size: 20px;
+      font-size: 14px;
+      overflow: auto;
     }
   }
 `;

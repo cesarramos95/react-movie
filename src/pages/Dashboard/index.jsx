@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Card from '../../components/Card';
 
 import { key } from '../../config/auth.json';
 
@@ -39,7 +40,8 @@ const Dashboard = () => {
     }
 
     try {
-      const response = await api.get(`/search/movie?api_key=${key}&language=pt-BR&page=1&include_adult=true&query=${newMovie}`);
+      const response = await api
+        .get(`/search/movie?api_key=${key}&language=pt-BR&page=1&include_adult=true&query=${newMovie}`);
 
       const movie = response.data;
 
@@ -69,11 +71,17 @@ const Dashboard = () => {
       {inputError && <Error>{inputError}</Error>}
 
       <Movie>
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.id}>{movie.title}</li>
-          ))}
-        </ul>
+        {movies.map((movie) => (
+          <Link
+            key={movie.id}
+            to="/movies"
+          >
+            <div>
+              <span key={movie.id}>{movie.title}</span>
+              <Card movie={movie} />
+            </div>
+          </Link>
+        ))}
       </Movie>
 
     </>
