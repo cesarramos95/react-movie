@@ -45,8 +45,6 @@ const Dashboard = () => {
 
       const movie = response.data;
 
-      console.log(movie);
-
       setMovies(movie.results);
       setNewMovie('');
       setInputError('');
@@ -74,7 +72,7 @@ const Dashboard = () => {
         {movies.map((movie) => (
           <Link
             key={movie.id}
-            to={`/${movie.id}?api_key=${key}&language=pt-BR`}
+            to={`/details/movie/${movie.id}`}
           >
             <div>
               <Card movie={movie} />

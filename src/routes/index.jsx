@@ -8,7 +8,7 @@ import MovieDetails from '../pages/MovieDetails';
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Dashboard} />
-    <Route path="/details" component={MovieDetails} />
+    <Route path="/details/movie/:id" component={MovieDetails} />
   </Switch>
 );
 
