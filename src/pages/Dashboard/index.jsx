@@ -74,10 +74,9 @@ const Dashboard = () => {
         {movies.map((movie) => (
           <Link
             key={movie.id}
-            to="/movies"
+            to={`/${movie.id}?api_key=${key}&language=pt-BR`}
           >
             <div>
-              <span key={movie.id}>{movie.title}</span>
               <Card movie={movie} />
             </div>
           </Link>

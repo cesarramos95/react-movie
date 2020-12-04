@@ -54,32 +54,35 @@ export const Error = styled.span`
 
 export const Movie = styled.div`
   display: flex;
+  flex: 1;
   align-items: center;
-  vertical-align: middle;
-  overflow: auto;
+  overflow: -moz-hidden-unscrollable;
+  margin-top: 16px;
 
 
-  & + div {
+  & + a {
     margin-top: 30px;
   }
 
-  div {
+  a {
+    /* grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); */
     flex: 1;
     background: #3e3b47;
     align-items: center;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-left: 24px;
     margin-right: 24px;
 
-    & + span {
+    /* & + span {
       margin-top: 16px;
-    }
+    } */
 
-    span {
-      margin-left: 24px;
+    div {
+      border-radius: 10px;
+      flex: 1;
+      text-justify: center;
       color: #fff;
       font-size: 14px;
-      overflow: auto;
     }
   }
 `;
