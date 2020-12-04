@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card';
 
-import { key } from '../../config/auth.json';
-
 import api from '../../services/api';
 
 import Header from '../../components/Header';
@@ -14,9 +12,7 @@ const Dashboard = () => {
   const [newMovie, setNewMovie] = useState('');
   const [inputError, setInputError] = useState('');
   const [movies, setMovies] = useState([], () => {
-    const storagedMovies = localStorage.getItem(
-      '@ReactMovies:movie',
-    );
+    const storagedMovies = localStorage.getItem('@ReactMovies:movie');
 
     if (storagedMovies) {
       return JSON.parse(storagedMovies);
@@ -25,10 +21,7 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem(
-      '@ReactMovie:movies',
-      JSON.stringify(movies),
-    );
+    localStorage.setItem('@ReactMovie:movies', JSON.stringify(movies));
   });
 
   async function handleSearchMovie(e) {
@@ -40,8 +33,9 @@ const Dashboard = () => {
     }
 
     try {
-      const response = await api
-        .get(`/search/movie?api_key=${key}&language=pt-BR&page=1&include_adult=true&query=${newMovie}`);
+      const response = await api.get(
+        `/search/movie?page=1&include_adult=true&query=${newMovie}`,
+      );
 
       const movie = response.data;
 
@@ -70,17 +64,13 @@ const Dashboard = () => {
 
       <Movie>
         {movies.map((movie) => (
-          <Link
-            key={movie.id}
-            to={`/details/movie/${movie.id}`}
-          >
+          <Link key={movie.id} to={`/details/movie/${movie.id}`}>
             <div>
               <Card movie={movie} />
             </div>
           </Link>
         ))}
       </Movie>
-
     </>
   );
 };
