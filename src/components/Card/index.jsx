@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 import { Image } from './styles';
 
@@ -17,5 +18,12 @@ const Card = ({ movie }) => (
     </div>
   </Image>
 );
+
+Card.propTypes = {
+  movie: propTypes.shape({
+    poster_path: propTypes.string,
+    title: propTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Card;
