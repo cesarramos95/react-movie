@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
-import { key } from '../../config/auth.json';
 import api from '../../services/api';
 
 import {
@@ -15,20 +14,15 @@ import {
 } from './styles';
 
 const MovieDetails = () => {
-  const [movie, setMovie] = useState(null);
-
   const { params } = useRouteMatch();
+  const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     async function loadDetails() {
       // Load a specific food with extras based on routeParams id
-      const response = await api.get(`/movie/${params.id}?api_key=${key}&language=pt-BR`);
+      const response = await api.get(`movie/${params.id}`);
 
-      const movieDetails = response.data;
-
-      console.log(movieDetails);
-
-      setMovie(movieDetails.results);
+      setMovie(response.data);
     }
 
     loadDetails();
