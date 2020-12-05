@@ -33,7 +33,7 @@ export const Form = styled.form`
   button {
     width: 100px;
     height: 50px;
-    background: #04d361;
+    background: #1ec7c7;
     border-radius: 8px 5px 5px 0px;
     border: 0;
     color: #fff;
@@ -41,7 +41,7 @@ export const Form = styled.form`
     transition: background-color 0.2s;
 
     &:hover {
-      background: ${shade(0.2, '#04d361')};
+      background: ${shade(0.2, '#1ec7c7')};
     }
   }
 `;
@@ -54,33 +54,28 @@ export const Error = styled.span`
 
 export const Movie = styled.div`
   display: flex;
-  flex: 1;
+  flex-wrap: wrap;
   align-items: center;
-  overflow: -moz-hidden-unscrollable;
+  /* overflow: -moz-hidden-unscrollable; */
   margin-top: 16px;
+  justify-content: space-between;
 
 
   & + a {
     margin-top: 30px;
+    margin-left: 14px;
   }
 
   a {
-    /* grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); */
     flex: 1;
     background: #3e3b47;
-    align-items: center;
-    /* border-radius: 10px; */
-    margin-left: 24px;
-    margin-right: 24px;
-
-    /* & + span {
-      margin-top: 16px;
-    } */
+    border-radius: 10px;
+    /* margin-left: 24px; */
+    margin-bottom: 14px;
 
     div {
       border-radius: 10px;
       flex: 1;
-      text-justify: center;
       color: #fff;
       font-size: 14px;
     }

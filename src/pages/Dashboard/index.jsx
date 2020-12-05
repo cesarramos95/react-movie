@@ -41,7 +41,9 @@ const Dashboard = () => {
 
     try {
       const response = await api
-        .get(`/search/movie?api_key=${key}&language=pt-BR&page=1&include_adult=true&query=${newMovie}`);
+        .get(
+          `/search/movie?api_key=${key}&language=pt-BR&page=1&include_adult=false&query=${newMovie}`,
+        );
 
       const movie = response.data;
 

@@ -7,8 +7,9 @@ const Header = () => (
   <Container>
     <FiFilm
       size={40}
-      color="#B7B7CC"
+      color="#FFF"
     />
+    <strong>React Movies</strong>
   </Container>
 );
 
