@@ -76,9 +76,7 @@ const Dashboard = () => {
             key={movie.id}
             to={`/details/movie/${movie.id}`}
           >
-            <div>
-              <Card movie={movie} />
-            </div>
+            <Card movie={movie} />
           </Link>
         ))}
       </Movie>

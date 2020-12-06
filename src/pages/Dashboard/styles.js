@@ -8,10 +8,12 @@ export const Form = styled.form`
 
   display: flex;
 
+
   input {
     flex: 1;
     height: 50px;
     padding: 0 24px;
+    justify-content: center;
 
     border: 0;
     border-radius: 5px 0 0 5px;
@@ -47,7 +49,8 @@ export const Form = styled.form`
 `;
 
 export const Error = styled.span`
-  display: block;
+  display: flex;
+  margin-left: 300px;
   color: #c53030;
   margin-top: 8px;
 `;
@@ -56,28 +59,18 @@ export const Movie = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  /* overflow: -moz-hidden-unscrollable; */
+  justify-content: center;
   margin-top: 16px;
-  justify-content: space-between;
+  /* margin-left: 14px; */
 
 
   & + a {
     margin-top: 30px;
-    margin-left: 14px;
   }
 
   a {
-    flex: 1;
     background: #3e3b47;
     border-radius: 10px;
-    /* margin-left: 24px; */
-    margin-bottom: 14px;
-
-    div {
-      border-radius: 10px;
-      flex: 1;
-      color: #fff;
-      font-size: 14px;
-    }
+    margin: 0 0 14px 14px;
   }
 `;
