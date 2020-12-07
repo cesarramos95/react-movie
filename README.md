@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+<h1 align="center"> 🎥🎬 React Movie 🎬🎥 </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  Aplicação para listar e pesquisar filmes e séries.
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+<br/>
 
-### `yarn start`
+## 📎 Funcionalidades
+- [x] Listar filmes e séries
+- [x] Pesquisar por filmes e séries
+- [x] Listar detalhes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<div id="technologies">
 
-### `yarn test`
+## 🛠 Technologies
+São utilizadas as seguintes tecnologias:
+- [React JS](https://pt-br.reactjs.org/)
+- [Axios](https://github.com/axios/axios)
+- [styled-components](https://styled-components.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</div>
 
-### `yarn build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div id="run">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ℹ Como executar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Requirements
 
-### `yarn eject`
+Antes de começar, você vai precisar instalar as seguintes ferramentas:
+- [React JS](https://pt-br.reactjs.org/)
+- [Yarn](https://yarnpkg.com)
+- [Git](https://git-scm.com)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone o repositório e instale as depenências:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clonando repositório
+$ git clone https://github.com/cesarramos95/react-movie
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Acessando a pasta
+$ cd react-movie
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Instalando as dependências
+$ yarn
 
-## Learn More
+# Para executar o servidor
+$ yarn start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<div id="autor">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Autor
 
-### Code Splitting
+<img src="https://avatars0.githubusercontent.com/u/41995703?s=460&u=e79d6900cae07be99d738d5388709b275f752356&v=4" width="100px" >
+<br>
+<a href="t.me/cesarramos95">César</a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[![Linkedin Badge](https://img.shields.io/badge/-César-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/cesararamos/)](https://www.linkedin.com/in/cesararamos/)
+[![Gmail Badge](https://img.shields.io/badge/-cesarramos.aug@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:cesarramos.aug@gmail.com)](mailto:cesarramos.aug@gmail.com)
 
-### Analyzing the Bundle Size
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+Made with ❤ by César 👋 [Get in touch!](https://linkedin.com/in/cesararamos)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

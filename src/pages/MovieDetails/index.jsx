@@ -9,10 +9,11 @@ import {
   Content,
   CoverMovie,
   InfoMovie,
-  Description,
+  Title,
+  Overview,
   Genre,
-  Credit,
   Other,
+  Director,
   Actor,
 } from './styles';
 
@@ -48,8 +49,6 @@ const MovieDetails = () => {
 
       const creditMovie = response.data;
 
-      console.log(creditMovie);
-
       setCredits(creditMovie.cast);
 
       setDirectors(creditMovie.crew);
@@ -71,11 +70,13 @@ const MovieDetails = () => {
             </CoverMovie>
 
             <InfoMovie>
-              <Description>
+              <Title>
                 <h1>{movie.original_title}</h1>
-                <p>{movie.overview}</p>
                 <div>{movie.vote_average}</div>
-              </Description>
+              </Title>
+              <Overview>
+                <p>{movie.overview}</p>
+              </Overview>
               <Genre>
                 {movie.genres && (
                   movie.genres.map((genre) => (
@@ -84,13 +85,19 @@ const MovieDetails = () => {
                     </span>
                   )))}
               </Genre>
-              <Other>
+              <Director>
+                <h3>Direção</h3>
                 {directors && (
                   directors
                     .filter((director) => director.job === 'Director')
                     .map((director) => <p key={director.id}>{director.name}</p>))}
+              </Director>
+              <Other>
+                <div>
+                  Lançamento
+                  <b>data</b>
+                </div>
               </Other>
-              <Credit />
             </InfoMovie>
           </>
         )}
