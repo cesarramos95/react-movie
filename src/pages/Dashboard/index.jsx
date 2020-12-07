@@ -8,7 +8,12 @@ import api from '../../services/api';
 
 import Header from '../../components/Header';
 
-import { Movie, Form, Error } from './styles';
+import {
+  Container,
+  Movie,
+  Form,
+  Error,
+} from './styles';
 
 const Dashboard = () => {
   const [newMovie, setNewMovie] = useState('');
@@ -48,7 +53,7 @@ const Dashboard = () => {
       const movie = response.data;
 
       setMovies(movie.results);
-      setNewMovie('');
+      setNewMovie(newMovie);
       setInputError('');
     } catch (err) {
       setInputError('Erro ao buscar filme/série');
@@ -56,19 +61,24 @@ const Dashboard = () => {
   }
 
   return (
-    <>
+    <Container>
       <Header />
-
       <Form hasError={!!inputError} onSubmit={handleSearchMovie}>
         <input
           value={newMovie}
           onChange={(e) => setNewMovie(e.target.value)}
-          placeholder="Pesquisar filme/série"
+          placeholder="Pesquisar filme ou série"
         />
         <button type="submit">Buscar</button>
       </Form>
 
       {inputError && <Error>{inputError}</Error>}
+
+      {movies.length === 0 && (
+        <Movie>
+          <img src="./image" alt="teste" />
+        </Movie>
+      )}
 
       <Movie>
         {movies.map((movie) => (
@@ -80,8 +90,7 @@ const Dashboard = () => {
           </Link>
         ))}
       </Movie>
-
-    </>
+    </Container>
   );
 };
 

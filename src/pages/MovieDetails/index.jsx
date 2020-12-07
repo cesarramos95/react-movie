@@ -9,15 +9,17 @@ import {
   Content,
   CoverMovie,
   InfoMovie,
-  Details,
-  Rating,
+  Description,
   Genre,
   Credit,
+  Other,
+  Actor,
 } from './styles';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const [credits, setCredits] = useState([]);
+  const [directors, setDirectors] = useState([]);
 
   const { params } = useRouteMatch();
 
@@ -49,6 +51,8 @@ const MovieDetails = () => {
       console.log(creditMovie);
 
       setCredits(creditMovie.cast);
+
+      setDirectors(creditMovie.crew);
     }
 
     loadCredits();
@@ -61,41 +65,48 @@ const MovieDetails = () => {
           <>
             <CoverMovie>
               <img
-                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/w780${movie.poster_path}`}
                 alt={`${movie.original_title} Poster`}
               />
             </CoverMovie>
 
             <InfoMovie>
-              <Details>
+              <Description>
                 <h1>{movie.original_title}</h1>
                 <p>{movie.overview}</p>
-              </Details>
-              <Rating>
-                <h3>Rating</h3>
                 <div>{movie.vote_average}</div>
-              </Rating>
+              </Description>
               <Genre>
-                <h3>Gêneros</h3>
                 {movie.genres && (
                   movie.genres.map((genre) => (
-                    <div key={genre.id}>
+                    <span key={genre.id}>
                       {genre.name}
-                    </div>
+                    </span>
                   )))}
               </Genre>
-              <Credit>
-                {credits && (
-                  credits.map((c) => (
-                    <p key={c.id}>
-                      {c.name}
-                    </p>
-                  )))}
-              </Credit>
+              <Other>
+                {directors && (
+                  directors
+                    .filter((director) => director.job === 'Director')
+                    .map((director) => <p key={director.id}>{director.name}</p>))}
+              </Other>
+              <Credit />
             </InfoMovie>
           </>
         )}
       </Content>
+      <Actor>
+        <h3>Elenco</h3>
+        <div>
+          {credits && (
+            credits.map((c) => (
+              <img
+                src={`https://image.tmdb.org/t/p/w200${c.profile_path}`}
+                alt={`${c.profile_path} Poster`}
+              />
+            )))}
+        </div>
+      </Actor>
     </Container>
   );
 };

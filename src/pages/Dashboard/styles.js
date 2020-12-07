@@ -1,13 +1,16 @@
 import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
+export const Container = styled.div`
+`;
+
 export const Form = styled.form`
   margin-top: 40px;
   margin-left: 300px;
-  max-width: 500px;
+  max-width: 700px;
 
   display: flex;
-
+  justify-content: center;
 
   input {
     flex: 1;
@@ -60,8 +63,7 @@ export const Movie = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
-  /* margin-left: 14px; */
+  margin-top: 30px;
 
 
   & + a {
