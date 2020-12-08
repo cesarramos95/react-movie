@@ -22,9 +22,7 @@ export const CoverMovie = styled.div`
 `;
 
 export const InfoMovie = styled.div`
-  height: 525px;
-
-  padding: 10px 10px 10px 20px;
+  max-height: 525px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 
@@ -36,6 +34,7 @@ export const Title = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-between;
+  margin: 10px 10px 0 20px;
 
   h1 {
     font-weight: 400;
@@ -55,7 +54,8 @@ export const Title = styled.div`
 `;
 
 export const Overview = styled.div`
-  margin: 30px 0;
+  margin: 30px 20px;
+  height: 95px;
 
   p {
     font-size: 15px;
@@ -65,7 +65,7 @@ export const Overview = styled.div`
 `;
 
 export const Genre = styled.div`
-  margin: 60px 0;
+  margin: 60px 20px;
   align-items: center;
 
   span {
@@ -91,7 +91,7 @@ export const Credit = styled.div`
 `;
 
 export const Director = styled.div`
-  margin-top: 80px;
+  margin: 80px 20px;
   display: flex;
 
   align-items: center;
@@ -113,10 +113,12 @@ export const Other = styled.div`
   flex: 1;
   justify-content: space-between;
 
+  border-bottom-right-radius: 10px;
+
   padding: 20px;
 
   background-color: #222222;
-  margin-top: 40px;
+  margin-top: 88px;
 
   b {
     margin-left: 8px;

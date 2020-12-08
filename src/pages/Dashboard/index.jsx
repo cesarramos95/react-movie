@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card';
 
-import { key } from '../../config/auth.json';
-
 import api from '../../services/api';
 
 import Header from '../../components/Header';
@@ -48,9 +46,7 @@ const Dashboard = () => {
 
     try {
       const response = await api
-        .get(
-          `/search/movie?api_key=${key}&language=pt-BR&page=1&include_adult=false&query=${newMovie}`,
-        );
+        .get(`/search/movie?query=${newMovie}`);
 
       const movie = response.data;
 
@@ -64,9 +60,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     async function listPopularMovies() {
-      const response = await api.get(
-        `movie/popular?api_key=${key}&language=pt-BR&page=1&include_adult=false`,
-      );
+      const response = await api.get('movie/popular');
 
       const popularMovies = response.data;
 

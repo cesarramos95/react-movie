@@ -3,7 +3,6 @@ import { useRouteMatch } from 'react-router-dom';
 
 import Header from '../../components/Header';
 
-import { key } from '../../config/auth.json';
 import api from '../../services/api';
 
 import {
@@ -29,25 +28,19 @@ const MovieDetails = () => {
   useEffect(() => {
     async function loadDetails() {
       // Load a specific movie with extras based on routeParams id
-      const response = await api.get(
-        `/movie/${params.id}?api_key=${key}&language=pt-BR`,
-      );
+      const response = await api.get(`/movie/${params.id}`);
 
       const movieDetails = response.data;
-
-      console.log(movieDetails);
 
       setMovie(movieDetails);
     }
 
     loadDetails();
-  }, [params, key]);
+  }, [params]);
 
   useEffect(() => {
     async function loadCredits() {
-      const response = await api.get(
-        `movie/${params.id}/credits?api_key=${key}&language=pt-BR`,
-      );
+      const response = await api.get(`movie/${params.id}/credits`);
 
       const creditMovie = response.data;
 
@@ -57,7 +50,7 @@ const MovieDetails = () => {
     }
 
     loadCredits();
-  }, [params, key]);
+  }, [params]);
 
   return (
     <Container>
