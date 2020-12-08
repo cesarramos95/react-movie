@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
+import Header from '../../components/Header';
+
 import { key } from '../../config/auth.json';
 import api from '../../services/api';
 
@@ -59,6 +61,7 @@ const MovieDetails = () => {
 
   return (
     <Container>
+      <Header />
       <Content>
         {movie && (
           <>

@@ -2,20 +2,17 @@ import styled from 'styled-components';
 
 import IMAGE from '../../images/Config';
 
-export const Container = styled.div`
-  margin: 20px 40px;
-`;
+export const Container = styled.div``;
 
 export const Content = styled.div`
   display: flex;
   background: url(${IMAGE}) no-repeat;
   background-size: cover;
   background-position: center;
-  /* flex: 1; */
+  margin: 20px;
 `;
 
 export const CoverMovie = styled.div`
-
 
   img {
     width: 375px;
@@ -128,7 +125,7 @@ export const Other = styled.div`
 `;
 
 export const Actor = styled.div`
-  margin-top: 30px;
+  margin: 30px 20px 0;
 
   h3 {
     margin-bottom: 10px;

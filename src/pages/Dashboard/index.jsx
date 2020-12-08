@@ -10,6 +10,7 @@ import Header from '../../components/Header';
 
 import {
   Container,
+  Popular,
   Movie,
   Form,
   Error,
@@ -18,6 +19,7 @@ import {
 const Dashboard = () => {
   const [newMovie, setNewMovie] = useState('');
   const [inputError, setInputError] = useState('');
+  const [populars, setPopulars] = useState([]);
   const [movies, setMovies] = useState([], () => {
     const storagedMovies = localStorage.getItem(
       '@ReactMovies:movie',
@@ -60,6 +62,22 @@ const Dashboard = () => {
     }
   }
 
+  useEffect(() => {
+    async function listPopularMovies() {
+      const response = await api.get(
+        `movie/popular?api_key=${key}&language=pt-BR&page=1&include_adult=false`,
+      );
+
+      const popularMovies = response.data;
+
+      console.log(popularMovies);
+
+      setPopulars(popularMovies.results);
+    }
+
+    listPopularMovies();
+  }, []);
+
   return (
     <Container>
       <Header />
@@ -75,9 +93,19 @@ const Dashboard = () => {
       {inputError && <Error>{inputError}</Error>}
 
       {movies.length === 0 && (
-        <Movie>
-          <img src="./image" alt="teste" />
-        </Movie>
+        <Popular>
+          <h1>Populares</h1>
+          <div>
+            {populars.map((p) => (
+              <Link
+                key={p.id}
+                to={`/details/movie/${p.id}`}
+              >
+                <Card movie={p} />
+              </Link>
+            ))}
+          </div>
+        </Popular>
       )}
 
       <Movie>

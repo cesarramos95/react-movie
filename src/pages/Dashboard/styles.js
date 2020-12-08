@@ -58,6 +58,29 @@ export const Error = styled.span`
   margin-top: 8px;
 `;
 
+export const Popular = styled.div`
+   margin-top: 30px;
+
+  h1 {
+     margin: 0 10px 10px;
+     font-size: 24px;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+
+  a {
+      background: #3e3b47;
+      border-radius: 10px;
+      margin: 8px auto;
+    }
+  }
+`;
+
 export const Movie = styled.div`
   display: flex;
   flex-wrap: wrap;
