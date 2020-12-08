@@ -95,7 +95,22 @@ const MovieDetails = () => {
               <Other>
                 <div>
                   Lançamento
-                  <b>data</b>
+                  <b>{movie.release_date}</b>
+                </div>
+                <div>
+                  Duração
+                  <b>
+                    {movie.runtime}
+                    m
+                  </b>
+                </div>
+                <div>
+                  Orçamento
+                  <b>{movie.budget}</b>
+                </div>
+                <div>
+                  Faturamento
+                  <b>{movie.revenue}</b>
                 </div>
               </Other>
             </InfoMovie>

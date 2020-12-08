@@ -19,6 +19,7 @@
 ## 🛠 Technologies
 São utilizadas as seguintes tecnologias:
 - [React JS](https://pt-br.reactjs.org/)
+- [Polished](https://polished.js.org/)
 - [Axios](https://github.com/axios/axios)
 - [styled-components](https://styled-components.com/)
 

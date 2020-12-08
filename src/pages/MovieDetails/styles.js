@@ -15,17 +15,23 @@ export const Content = styled.div`
 `;
 
 export const CoverMovie = styled.div`
-  padding: 0 10px 0 0;
+
 
   img {
-    width: 300px;
+    width: 375px;
+    height: 525px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.98);
-    z-index: 1;
   }
 `;
 
 export const InfoMovie = styled.div`
-  margin-left: 20px;
+  height: 525px;
+
+  padding: 10px 10px 10px 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  background-color: rgba(2, 2, 2, 0.25);
 
 `;
 
@@ -62,15 +68,17 @@ export const Overview = styled.div`
 `;
 
 export const Genre = styled.div`
-  margin: 16px 0;
+  margin: 60px 0;
   align-items: center;
 
   span {
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
     margin-right: 14px;
     padding: 8px 20px;
-    border-radius: 2px;
+    border-radius: 4px;
+
+    /* border: 1px solid #1ec7c7; */
 
     background-color: #1ec7c7;
   }
@@ -87,19 +95,36 @@ export const Credit = styled.div`
 
 export const Director = styled.div`
   margin-top: 80px;
+  display: flex;
+
+  align-items: center;
+
 
   h3 {
-    margin-bottom: 8px;
+    font-size: 17px;
+    padding: 0 16px 0 0;
   }
 
   p {
-    font-size: 12px;
+    margin-right: 16px;
+    font-size: 15px;
   }
 `;
 
 export const Other = styled.div`
-  background-color: #1ec7c7;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  background-color: #222222;
   margin-top: 40px;
+
+  b {
+    margin-left: 8px;
+  }
+
 `;
 
 export const Actor = styled.div`
