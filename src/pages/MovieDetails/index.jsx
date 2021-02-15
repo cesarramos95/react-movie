@@ -4,6 +4,7 @@ import { useRouteMatch } from 'react-router-dom';
 import Header from '../../components/Header';
 
 import api from '../../services/api';
+import formatValue from '../../utils/formatValue';
 
 import {
   Container,
@@ -27,12 +28,20 @@ const MovieDetails = () => {
 
   useEffect(() => {
     async function loadDetails() {
-      // Load a specific movie with extras based on routeParams id
+      /**
+       * Load a specific movie with extras based on routeParams id
+      */
       const response = await api.get(`/movie/${params.id}`);
 
-      const movieDetails = response.data;
+      const movieDetail = response.data;
 
-      setMovie(movieDetails);
+      const formattedMovieDetail = {
+        ...movieDetail,
+        formattedBudget: formatValue(movieDetail.budget),
+        formattedRevenue: formatValue(movieDetail.revenue),
+      };
+
+      setMovie(formattedMovieDetail);
     }
 
     loadDetails();
@@ -102,11 +111,11 @@ const MovieDetails = () => {
                 </div>
                 <div>
                   Orçamento
-                  <b>{movie.budget}</b>
+                  <b>{movie.formattedBudget}</b>
                 </div>
                 <div>
                   Faturamento
-                  <b>{movie.revenue}</b>
+                  <b>{movie.formattedRevenue}</b>
                 </div>
               </Other>
             </InfoMovie>

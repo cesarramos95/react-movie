@@ -5,6 +5,33 @@
 
 </div>
 
+<div align="center">
+
+![GitHub top language](https://img.shields.io/github/languages/top/cesarramos95/react-movie)
+![GitHub language count](https://img.shields.io/github/languages/count/cesarramos95/react-movie?color=orange)
+![GitHub last commit](https://img.shields.io/github/last-commit/cesarramos95/react-movie)
+![GitHub repo size](https://img.shields.io/github/repo-size/cesarramos95/react-movie?color=yellow)
+<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=green>" alt="license" />
+
+</div>
+
+</div>
+
+<p align="center">
+ <a href="#sobre">Sobre</a> |
+ <a href="#techs">Tecnologias</a> |
+ <a href="#requisitos">Requisitos</a> |
+ <a href="#run">Como rodar</a> |
+ <a href="#license">Licensa</a> |
+ <a href="#autor">Autor</a>
+</p>
+
+<br />
+
+<h2 align="center"> 🚧 Em construção 🚧 </h2>
+
+<br/>
+
 <br/>
 
 ## 📎 Funcionalidades

@@ -64,8 +64,6 @@ const Dashboard = () => {
 
       const popularMovies = response.data;
 
-      console.log(popularMovies);
-
       setPopulars(popularMovies.results);
     }
 
