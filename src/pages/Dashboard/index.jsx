@@ -84,7 +84,7 @@ const Dashboard = () => {
 
       {inputError && <Error>{inputError}</Error>}
 
-      {movies.length === 0 && (
+      {movies.length === 0 ? (
         <Popular>
           <h1>Populares</h1>
           <div>
@@ -98,18 +98,18 @@ const Dashboard = () => {
             ))}
           </div>
         </Popular>
+      ) : (
+        <Movie>
+          {movies.map((movie) => (
+            <Link
+              key={movie.id}
+              to={`/details/movie/${movie.id}`}
+            >
+              <Card movie={movie} />
+            </Link>
+          ))}
+        </Movie>
       )}
-
-      <Movie>
-        {movies.map((movie) => (
-          <Link
-            key={movie.id}
-            to={`/details/movie/${movie.id}`}
-          >
-            <Card movie={movie} />
-          </Link>
-        ))}
-      </Movie>
     </Container>
   );
 };

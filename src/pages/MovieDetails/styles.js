@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
-import IMAGE from '../../images/Config';
-
 export const Container = styled.div``;
 
 export const Content = styled.div`
   display: flex;
-  background: url(${IMAGE}) no-repeat;
   background-size: cover;
   background-position: center;
   margin: 20px;

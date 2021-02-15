@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 
 import api from '../../services/api';
 import formatValue from '../../utils/formatValue';
+import formatDate from '../../utils/formatDate';
 
 import {
   Container,
@@ -37,6 +38,7 @@ const MovieDetails = () => {
 
       const formattedMovieDetail = {
         ...movieDetail,
+        formattedDate: formatDate(movieDetail.release_date),
         formattedBudget: formatValue(movieDetail.budget),
         formattedRevenue: formatValue(movieDetail.revenue),
       };
@@ -100,7 +102,7 @@ const MovieDetails = () => {
               <Other>
                 <div>
                   Lançamento
-                  <b>{movie.release_date}</b>
+                  <b>{movie.formattedDate}</b>
                 </div>
                 <div>
                   Duração
